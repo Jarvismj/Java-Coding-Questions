@@ -1,0 +1,23 @@
+package srctest;
+
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+
+public class FruitsClass {
+
+	public static void main(String[] args) {
+
+		String str ="aaabfdifdihofrefjferfergrgergerggerg";
+		
+		String s[] = str.split("");
+		
+		System.out.println(Arrays.stream(s).sorted().collect(Collectors.joining()));
+		 
+
+	}
+
+}
