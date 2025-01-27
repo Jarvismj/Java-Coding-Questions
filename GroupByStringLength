@@ -1,0 +1,28 @@
+package srctest;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import java.util.Stack;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+
+public class GroupByStringLength {
+
+	public static void main(String args[]) {
+
+		String[] input = { "India", "UK", "Japan", "UAE", "US" };
+
+		Arrays.stream(input).collect(Collectors.groupingBy(String::length)).entrySet().stream().map(i -> i.getValue())
+				.forEach(System.out::println);
+		;
+
+	}
+
+}
