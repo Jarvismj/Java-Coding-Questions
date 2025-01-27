@@ -1,0 +1,34 @@
+package srctest;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import java.util.Stack;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+
+public class TestMain {
+
+	public static void main(String args[]) {
+
+		List<Integer> al = Arrays.asList(2, 3, 4, 5, 6, 8, 9);
+
+		Map<Boolean, List<Integer>> hs = al.stream().collect(Collectors.partitioningBy(i -> i % 2 == 0));
+
+		for (Map.Entry<Boolean, List<Integer>> he : hs.entrySet()) {
+			if (Boolean.TRUE.equals(he.getKey())) {
+				System.out.println("Even Numbers are:" + he.getValue());
+			} else {
+				System.out.println("Odd Numbers are:" + he.getValue());
+			}
+		}
+
+	}
+
+}
