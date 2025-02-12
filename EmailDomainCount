@@ -1,0 +1,42 @@
+package srctest;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+public class MainProduct {
+
+	public static void main(String[] args) {
+		
+		Employee e1 = new Employee(1,"Mohit",34,"Male","HR",2019,200000,"abc@gmail.com");
+		Employee e2 = new Employee(2,"Rohit",34,"Male","HR",2019,200000,"arc@xyz.com");
+		Employee e3 = new Employee(3,"Shyam",34,"Male","HR",2019,200000,"adc@gmail.com");
+		Employee e4 = new Employee(4,"Ram",34,"Male","HR",2019,200000,"aec@xyz.com");
+		Employee e5 = new Employee(5,"Mohan",34,"Male","HR",2019,200000,"afc@yahoo.com");
+		
+		List<Employee> al = Arrays.asList(e1,e2,e3,e4,e5);
+		
+		
+		
+		System.out.println(al.stream().map(Employee->Employee.getEmail().substring(Employee.getEmail().indexOf('@')+1)).
+		collect(Collectors.groupingBy(Function.identity(),Collectors.counting())));
+
+		
+		
+
+
+	}
+
+	
+
+}
