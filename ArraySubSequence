@@ -1,0 +1,45 @@
+package srctest;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeSet;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+public class MainProduct {
+
+	public static void main(String[] args) {
+
+		int arr1[] = { -1, 2, 7 ,8, 22, 34, 100};
+		int arr2[] = { 2, 8, 100 };
+		int count = 0;
+		LinkedHashSet<Integer> ts = new LinkedHashSet<>();
+
+		for (int i = 0; i < arr1.length; i++) {
+			for (int j = 0; j < arr2.length; j++) {
+				if (arr1[i] == arr2[j]) {
+					ts.add(arr2[j]);
+					count++;
+				}
+			}
+		}
+
+		if (arr2[0] == ts.getFirst() && count == arr2.length) {
+			System.out.println("True");
+		} else {
+			System.out.println("False");
+		}
+
+	}
+
+}
