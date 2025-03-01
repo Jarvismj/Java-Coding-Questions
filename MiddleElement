@@ -1,0 +1,33 @@
+package srctest;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class HashMapMain {
+
+	public static void main(String[] args) {
+
+		HashMap<Integer, Integer> hs = new HashMap<>();
+
+		hs.put(1, 2);
+		hs.put(2, 3);
+		hs.put(4, 5);
+		hs.put(3, 6);
+		hs.put(7, 8);
+		System.out.println(middleElement(hs));
+
+	}
+
+	public static int middleElement(HashMap<Integer, Integer> hs) {
+		List<Map.Entry<Integer, Integer>> al = new ArrayList<>(hs.entrySet());
+		System.out.println(al);
+
+		int middle = al.size() / 2;
+
+		return al.get(middle).getKey();
+
+	}
+
+}
